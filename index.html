@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rahul - Data Engineer | Real-Time Data Pipelines | Kafka, Spark, Python">
+    <title>Rahul | Data Engineer Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Rahul Sunny</h2>
+                <p class="tagline">Data Engineer</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Rahul</span></h1>
+                <h2 class="hero-subtitle">Data Engineer specializing in Real-Time Data Pipelines</h2>
+                <p class="hero-description">
+                    Building scalable data systems with Apache Kafka, Spark, and PostgreSQL
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/RahulSunny1209" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate Data Engineer with expertise in building real-time data pipelines 
+                        and distributed systems. I love solving complex data problems and creating scalable 
+                        solutions that handle millions of events per second.
+                    </p>
+                    <p>
+                        My recent work focuses on streaming architectures using Apache Kafka and Spark, 
+                        with a strong emphasis on fault tolerance, exactly-once semantics, and low-latency processing.
+                    </p>
+                    <p>
+                        When I'm not building data pipelines, I enjoy contributing to open-source projects 
+                        and writing technical blogs to share knowledge with the community.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>5+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>10+</h3>
+                        <p>Technologies</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coffee"></i>
+                        <h3>1000+</h3>
+                        <p>Lines of Code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Main Project: Stock Pipeline -->
+            <div class="project-card featured">
+                <div class="project-header">
+                    <span class="badge badge-featured">⭐ Featured</span>
+                    <h3>Real-Time Stock Market Data Pipeline</h3>
+                </div>
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Dashboard+Screenshot" 
+                             alt="Stock Pipeline Dashboard">
+                        <div class="project-overlay">
+                            <a href="https://stock-pipeline.streamlit.app/" target="_blank" class="overlay-btn">
+                                <i class="fas fa-external-link-alt"></i> View Live
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <p class="project-description">
+                            Production-grade real-time data pipeline streaming live stock market data through 
+                            Apache Kafka, processing with Spark Structured Streaming, and visualizing in an 
+                            interactive dashboard with &lt;30-second end-to-end latency.
+                        </p>
+                        
+                        <div class="project-highlights">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Fault-tolerant with exactly-once semantics</li>
+                                <li><i class="fas fa-check"></i> 9 containerized microservices with Docker</li>
+                                <li><i class="fas fa-check"></i> PostgreSQL optimization with composite indexes</li>
+                                <li><i class="fas fa-check"></i> Redis caching layer for hot data</li>
+                                <li><i class="fas fa-check"></i> Interactive Streamlit dashboard with Plotly charts</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Apache Kafka</span>
+                            <span class="tech-badge">Apache Spark</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <strong>&lt;30s</strong>
+                                <span>Latency</span>
+                            </div>
+                            <div class="metric">
+                                <strong>99.9%</strong>
+                                <span>Uptime</span>
+                            </div>
+                            <div class="metric">
+                                <strong>9</strong>
+                                <span>Services</span>
+                            </div>
+                            <div class="metric">
+                                <strong>245+</strong>
+                                <span>Records/5min</span>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://stock-pipeline.streamlit.app/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-globe"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/RahulSunny1209/realtime-stock-pipeline" target="_blank" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more projects here -->
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Warehouse ETL</h3>
+                    <p>Automated ETL pipeline processing 1M+ records daily</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge-sm">Python</span>
+                        <span class="tech-badge-sm">SQL</span>
+                        <span class="tech-badge-sm">Airflow</span>
+                    </div>
+                    <a href="#" class="project-link">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ML Pipeline</h3>
+                    <p>End-to-end ML pipeline with model serving</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge-sm">Python</span>
+                        <span class="tech-badge-sm">TensorFlow</span>
+                        <span class="tech-badge-sm">MLflow</span>
+                    </div>
+                    <a href="#" class="project-link">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Data Lake</h3>
+                    <p>Scalable data lake on cloud infrastructure</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge-sm">AWS</span>
+                        <span class="tech-badge-sm">S3</span>
+                        <span class="tech-badge-sm">Glue</span>
+                    </div>
+                    <a href="#" class="project-link">Coming Soon <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <h3>Data Streaming</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Apache Kafka</li>
+                        <li><i class="fas fa-check-circle"></i> Apache Spark Streaming</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time Processing</li>
+                        <li><i class="fas fa-check-circle"></i> Event-Driven Architecture</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Databases</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
+                        <li><i class="fas fa-check-circle"></i> Redis</li>
+                        <li><i class="fas fa-check-circle"></i> MongoDB</li>
+                        <li><i class="fas fa-check-circle"></i> SQL Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Python (Advanced)</li>
+                        <li><i class="fas fa-check-circle"></i> SQL</li>
+                        <li><i class="fas fa-check-circle"></i> PySpark</li>
+                        <li><i class="fas fa-check-circle"></i> Shell Scripting</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-docker"></i>
+                    </div>
+                    <h3>DevOps & Cloud</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Docker & Docker Compose</li>
+                        <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                        <li><i class="fas fa-check-circle"></i> AWS / Azure</li>
+                        <li><i class="fas fa-check-circle"></i> CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Streamlit</li>
+                        <li><i class="fas fa-check-circle"></i> Plotly</li>
+                        <li><i class="fas fa-check-circle"></i> Matplotlib</li>
+                        <li><i class="fas fa-check-circle"></i> Tableau</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Apache Airflow</li>
+                        <li><i class="fas fa-check-circle"></i> Pandas</li>
+                        <li><i class="fas fa-check-circle"></i> NumPy</li>
+                        <li><i class="fas fa-check-circle"></i> Jupyter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+                Interested in working together? Let's connect!
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/RahulSunny1209" target="_blank">github.com/RahulSunny1209</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Hyderabad, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Open to Opportunities</h3>
+                    <p>
+                        I'm currently open to Data Engineering roles, consulting opportunities, 
+                        and interesting collaborations. Feel free to reach out!
+                    </p>
+                    <a href="mailto:your.email@example.com" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Rahul Sunny. Built with ❤️ for Data Engineering</p>
+            <div class="footer-links">
+                <a href="https://github.com/RahulSunny1209" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
