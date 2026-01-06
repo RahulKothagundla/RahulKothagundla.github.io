@@ -170,9 +170,9 @@
                     <div class="about-tech">
                         <h3>What I'm Working With</h3>
                         <div class="tech-tags">
-                            <span class="tech-tag primary">Apache Kafka</span>
-                            <span class="tech-tag primary">Apache Spark</span>
-                            <span class="tech-tag primary">Azure Databricks</span>
+                            <span class="tech-tag">Apache Kafka</span>
+                            <span class="tech-tag">Apache Spark</span>
+                            <span class="tech-tag">Azure Databricks</span>
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">Redis</span>
                             <span class="tech-tag">Docker</span>
@@ -258,12 +258,15 @@
                             <span class="timeline-date">June 2024 - Present</span>
                         </div>
                         <div class="timeline-body">
-                            <div class="achievement">
-                                <div class="achievement-icon success">
-                                    <i class="fas fa-chart-line"></i>
+                            <div class="achievement-collapsible">
+                                <div class="achievement-header" onclick="toggleAchievement(this)">
+                                    <div class="achievement-icon success">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4>70% Performance Improvement</h4>
+                                    <i class="fas fa-chevron-down collapse-icon"></i>
                                 </div>
                                 <div class="achievement-content">
-                                    <h4>70% Performance Improvement</h4>
                                     <p>
                                         Re-architected a critical Power BI reporting environment by 
                                         offloading heavy DAX computations to Azure Databricks backend, 
@@ -273,26 +276,33 @@
                                 </div>
                             </div>
                             
-                            <div class="achievement">
-                                <div class="achievement-icon info">
-                                    <i class="fas fa-shield-alt"></i>
+                            <div class="achievement-collapsible">
+                                <div class="achievement-header" onclick="toggleAchievement(this)">
+                                    <div class="achievement-icon info">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4>Self-Monitoring Pipeline Framework</h4>
+                                    <i class="fas fa-chevron-down collapse-icon"></i>
                                 </div>
                                 <div class="achievement-content">
-                                    <h4>Self-Monitoring Pipeline Framework</h4>
                                     <p>
                                         Engineered a robust data pipeline framework with automated error 
-                                        detection, secure backups, and proactive failure identification maintaining 
+                                        detection, secure backups and proactive failure identification maintaining 
                                         99.9% data integrity across production systems.
                                     </p>
                                 </div>
                             </div>
                             
-                            <div class="achievement">
-                                <div class="achievement-icon primary">
-                                    <i class="fas fa-database"></i>
+                            <!-- Collapsible Achievement 3 -->
+                            <div class="achievement-collapsible">
+                                <div class="achievement-header" onclick="toggleAchievement(this)">
+                                    <div class="achievement-icon primary">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <h4>End-to-End Data Workflow</h4>
+                                    <i class="fas fa-chevron-down collapse-icon"></i>
                                 </div>
                                 <div class="achievement-content">
-                                    <h4>End-to-End Data Workflow</h4>
                                     <p>
                                         Designed complete data pipeline from the ground up, transforming 
                                         raw Salesforce data into strategic business assets for advanced 
@@ -414,51 +424,6 @@
                         </div>
                     </div>
                     
-                    <div class="project-architecture">
-                        <h3>Architecture</h3>
-                        <div class="arch-flow">
-                            <div class="arch-node">Finnhub API</div>
-                            <div class="arch-arrow">→</div>
-                            <div class="arch-node">Kafka</div>
-                            <div class="arch-arrow">→</div>
-                            <div class="arch-node">Spark</div>
-                            <div class="arch-arrow">→</div>
-                            <div class="arch-node">PostgreSQL</div>
-                            <div class="arch-arrow">→</div>
-                            <div class="arch-node">Dashboard</div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-features">
-                        <h3>Key Features</h3>
-                        <div class="feature-grid">
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Fault-tolerant with exactly-once semantics</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Kafka partitioning for parallel processing</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Spark checkpointing for state recovery</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>PostgreSQL with optimized indexes</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Redis caching for hot data</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Interactive Streamlit dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-                    
                     <div class="project-tech-stack">
                         <h3>Technology Stack</h3>
                         <div class="tech-stack-grid">
@@ -532,34 +497,13 @@
                         </div>
                         <div>
                             <h3>Data Engineering</h3>
-                            <span class="skill-badge">Core Expertise</span>
                         </div>
                     </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Apache Kafka</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Apache Spark</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Azure Databricks</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">ETL Pipelines</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
+                    <div class="skill-tags">
+                        <span>Apache Kafka</span>
+                        <span>Apache Spark</span>
+                        <span>Azure Databricks</span>
+                        <span>ETL Pipelines</span>
                     </div>
                 </div>
                 

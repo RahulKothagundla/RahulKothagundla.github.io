@@ -30,6 +30,31 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
+// === COLLAPSIBLE ACHIEVEMENTS ===
+function toggleAchievement(element) {
+    const collapsible = element.parentElement;
+    const allCollapsibles = document.querySelectorAll('.achievement-collapsible');
+    
+    // Close all other collapsibles
+    allCollapsibles.forEach(item => {
+        if (item !== collapsible) {
+            item.classList.remove('active');
+        }
+    });
+    
+    // Toggle current collapsible
+    collapsible.classList.toggle('active');
+}
+
+// Auto-close collapsibles when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.achievement-collapsible')) {
+        document.querySelectorAll('.achievement-collapsible').forEach(item => {
+            item.classList.remove('active');
+        });
+    }
+});
+
 // === ACTIVE NAVIGATION LINK ===
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
