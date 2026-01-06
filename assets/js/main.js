@@ -31,17 +31,15 @@ window.addEventListener('scroll', () => {
 });
 
 // === COLLAPSIBLE ACHIEVEMENTS ===
-function toggleAchievement(button) {
-  const current = button.closest('.achievement-collapsible');
-  const all = document.querySelectorAll('.achievement-collapsible');
+function toggleAccordion(button) {
+  const item = button.closest('.accordion-item');
+  const allItems = document.querySelectorAll('.accordion-item');
 
-  all.forEach(item => {
-    if (item !== current) {
-      item.classList.remove('active');
-    }
+  allItems.forEach(el => {
+    if (el !== item) el.classList.remove('active');
   });
 
-  current.classList.toggle('active');
+  item.classList.toggle('active');
 }
 
 
