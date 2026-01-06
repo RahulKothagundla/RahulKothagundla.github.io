@@ -31,29 +31,19 @@ window.addEventListener('scroll', () => {
 });
 
 // === COLLAPSIBLE ACHIEVEMENTS ===
-function toggleAchievement(element) {
-    const collapsible = element.parentElement;
-    const allCollapsibles = document.querySelectorAll('.achievement-collapsible');
-    
-    // Close all other collapsibles
-    allCollapsibles.forEach(item => {
-        if (item !== collapsible) {
-            item.classList.remove('active');
-        }
-    });
-    
-    // Toggle current collapsible
-    collapsible.classList.toggle('active');
+function toggleAchievement(button) {
+  const current = button.closest('.achievement-collapsible');
+  const all = document.querySelectorAll('.achievement-collapsible');
+
+  all.forEach(item => {
+    if (item !== current) {
+      item.classList.remove('active');
+    }
+  });
+
+  current.classList.toggle('active');
 }
 
-// Auto-close collapsibles when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.achievement-collapsible')) {
-        document.querySelectorAll('.achievement-collapsible').forEach(item => {
-            item.classList.remove('active');
-        });
-    }
-});
 
 // === ACTIVE NAVIGATION LINK ===
 const sections = document.querySelectorAll('section[id]');
@@ -136,8 +126,8 @@ console.log(
     'font-size: 20px; font-weight: bold; color: #0ea5e9;'
 );
 console.log(
-    '%cThanks for checking out the source code!
-    '%cInterested in how I built this portfolio? Let\'s connect!',
+    '%cThanks for checking out the source code!'
+    '%cInterested in how I built this portfolio? Lets connect!',
     'font-size: 14px; color: #94a3b8;'
 );
 console.log(
