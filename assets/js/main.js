@@ -30,18 +30,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// === COLLAPSIBLE ACHIEVEMENTS ===
-function toggleAccordion(button) {
-  const item = button.closest('.accordion-item');
-  const allItems = document.querySelectorAll('.accordion-item');
-
-  allItems.forEach(el => {
-    if (el !== item) el.classList.remove('active');
-  });
-
-  item.classList.toggle('active');
-}
-
 
 // === ACTIVE NAVIGATION LINK ===
 const sections = document.querySelectorAll('section[id]');
