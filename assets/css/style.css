@@ -1221,7 +1221,7 @@ section {
 }
 
 .contact-info h3 {
-    color: #db0707;
+    color: var(--color-text-primary);
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
