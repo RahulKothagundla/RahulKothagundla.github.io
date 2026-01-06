@@ -112,9 +112,19 @@ console.log(
     'font-size: 20px; font-weight: bold; color: #0ea5e9;'
 );
 console.log(
-    '%cThanks for checking out the source code!'
-    '%cInterested in how I built this portfolio? Lets connect!',
-    'font-size: 14px; color: #94a3b8;'
+  '%c👋 Hi there!',
+  'font-size: 20px; font-weight: bold; color: #0ea5e9;'
+);
+
+console.log(
+  '%cThanks for checking out the source code!\n%cInterested in how I built this portfolio? Let’s connect!',
+  'font-size: 14px; color: #94a3b8;',
+  'font-size: 14px; color: #0ea5e9; font-weight: 600;'
+);
+
+console.log(
+  '%c📧 rahulkothagundla2002@gmail.com',
+  'font-size: 14px; color: #0ea5e9; font-weight: bold;'
 );
 console.log(
     '%c📧 rahulkothagundla2002@gmail.com',
