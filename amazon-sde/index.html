@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rahul Kothagundla - Software Development Engineer with expertise in distributed systems, backend development, and cloud infrastructure. Applying for Amazon SDE I role.">
+    <meta name="keywords" content="Software Engineer, Amazon, SDE, Distributed Systems, Java, Python, Kafka, Spark">
+    <meta name="author" content="Rahul Kothagundla">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Rahul Kothagundla - Software Development Engineer">
+    <meta property="og:description" content="Building scalable distributed systems and production-grade software solutions">
+    <meta property="og:type" content="website">
+    
+    <title>Rahul Kothagundla | Software Development Engineer - Amazon SDE Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">RK</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for SDE Opportunities
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Rahul Kothagundla</span>
+                </h1>
+                <h2 class="hero-subtitle">Software Development Engineer</h2>
+                <p class="hero-description">
+                    I build <span class="highlight-text">scalable distributed systems</span> and 
+                    <span class="highlight-text">production-grade software</span> that solve real-world problems. 
+                    Experienced in backend development, cloud infrastructure, and real-time data processing.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1.5+</div>
+                        <div class="stat-label">Years Production Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Performance Improvement</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Daily Records Processed</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="assets/Rahul_Kothagundla_Resume.pdf" class="btn btn-outline" download>Download Resume</a>
+                </div>
+
+                <div class="hero-links">
+                    <a href="https://linkedin.com/in/kothagundlarahul" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/RahulKothagundla" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://medium.com/@kothagundlarahul" target="_blank" rel="noopener" class="social-link" aria-label="Medium">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:rahulkothagundla2002@gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a <strong>Software Development Engineer</strong> passionate about building systems that scale. 
+                        With production experience at <strong>Tata Consultancy Services</strong>, I've worked on 
+                        enterprise-grade distributed systems.
+                    </p>
+
+                    <div class="about-highlight">
+                        <h3>Why Amazon?</h3>
+                        <p>
+                            Amazon's customer obsession and culture of innovation deeply resonate with me. I'm excited 
+                            about the opportunity to work on systems that impact millions of customers globally and to 
+                            learn from some of the best engineers in the industry.
+                        </p>
+                        <p>
+                            My experience building fault-tolerant distributed systems, optimizing performance at scale, 
+                            and maintaining reliability aligns perfectly with Amazon's engineering standards. 
+                            I'm particularly drawn to solving ambiguous problems and delivering high-quality software quickly.
+                        </p>
+                    </div>
+
+                    <div class="about-achievements">
+                        <h3>Key Achievements</h3>
+                        <ul class="achievements-list">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>70% performance improvement</strong> by re-architecting distributed data processing system</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>5-star performance rating</strong> in first year at TCS (rare achievement for freshers)</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>90% reduction in onboarding time</strong> through comprehensive technical documentation</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>AWS Cloud Quest certified</strong> in Generative AI (January 2026)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-sidebar">
+                    <div class="info-card">
+                        <h3>Current Role</h3>
+                        <p class="role-title">Systems Engineer</p>
+                        <p class="role-company">Tata Consultancy Services</p>
+                        <p class="role-duration">June 2024 - Present</p>
+                        <p class="role-location">Hyderabad, India</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Education</h3>
+                        <p class="edu-degree">B.Tech - Computer Science and Engineering</p>
+                        <p class="edu-degree">Specialization: Data Science</p>
+                        <p class="edu-school">VNR VJIET, Hyderabad</p>
+                        <p class="edu-grade"><strong>CGPA: 8.55/10</strong></p>
+                        <p class="edu-duration">2020 - 2024</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Certifications</h3>
+                        <ul class="cert-list">
+                            <li>
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                </svg>
+                                AWS Cloud Quest: Generative AI
+                            </li>
+                            <li>
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                </svg>
+                                Amazon ML Summer School 2023
+                            </li>
+                            <li>
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                </svg>
+                                HackerRank 5-Star Problem Solving
+                            </li>
+                            <li>
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                                </svg>
+                                ISRO Geo Data Processing
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Technical Projects</h2>
+                <p class="section-description">
+                    Production-grade projects demonstrating distributed systems, backend development, and cloud infrastructure expertise
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Stock Pipeline -->
+                <div class="project-card featured">
+                    <div class="project-badge">Featured Project</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Real-Time Stock Market Streaming System</h3>
+                            <div class="project-links">
+                                <a href="https://stock-pipeline.streamlit.app/" target="_blank" rel="noopener" class="project-link" aria-label="Live Demo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Live Demo
+                                </a>
+                                <a href="https://github.com/RahulKothagundla/realtime-stock-pipeline" target="_blank" rel="noopener" class="project-link" aria-label="GitHub Repository">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="project-description">
+                            Production-grade distributed streaming system processing live stock market data with <strong>sub-30-second end-to-end latency</strong>. 
+                            Demonstrates scalable architecture, fault-tolerant design, and real-time data processing at scale.
+                        </p>
+
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>Apache Kafka</strong> with 3 partitions for parallel processing</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>Spark Structured Streaming</strong> with exactly-once semantics</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>PostgreSQL + Redis</strong> for optimized storage and caching</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>Docker Compose</strong> orchestration across 9 microservices</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Apache Kafka</span>
+                            <span class="tech-tag">Apache Spark</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">&lt;30s</div>
+                                <div class="metric-label">End-to-End Latency</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">99.9%</div>
+                                <div class="metric-label">System Uptime</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">9</div>
+                                <div class="metric-label">Microservices</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Coming Soon -->
+                <div class="project-card coming-soon">
+                    <div class="project-badge coming-badge">In Development</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">TaskFlow API - RESTful Task Management System</h3>
+                        </div>
+
+                        <p class="project-description">
+                            Production-ready RESTful API service with authentication, CRUD operations, and search functionality. 
+                            Demonstrates backend development, API design, and cloud deployment expertise.
+                        </p>
+
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>JWT Authentication</strong> with secure token management</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>RESTful API</strong> design with comprehensive endpoints</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>PostgreSQL + Redis</strong> for data persistence and caching</span>
+                            </div>
+                            <div class="highlight-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path fill="white" d="M9 12l2 2 4-4"/>
+                                </svg>
+                                <span><strong>Docker deployment</strong> with comprehensive testing</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Pytest</span>
+                        </div>
+
+                        <div class="coming-soon-note">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Expected completion: February 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Career Journey</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- TCS -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Systems Engineer</h3>
+                                <p class="experience-company">Tata Consultancy Services</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-duration">June 2024 - Present</span>
+                                <span class="experience-location">Hyderabad, India</span>
+                            </div>
+                        </div>
+
+                        <ul class="experience-list">
+                            <li>
+                                Engineered a <strong>distributed data processing system</strong> using Azure Databricks and Python, 
+                                re-architecting the computational layer to offload heavy operations, reducing system reload time by 
+                                <strong>70%</strong> (15min → 7min) and eliminating service disruptions for enterprise stakeholders.
+                            </li>
+                            <li>
+                                Designed and deployed <strong>production-grade self-monitoring pipeline framework</strong> with 
+                                automated error detection, proactive failure handling, and secure backup mechanisms, maintaining 
+                                <strong>data integrity</strong> across 50K+ daily records.
+                            </li>
+                            <li>
+                                Built <strong>end-to-end ETL pipelines</strong> from scratch using Python and SQL, transforming 
+                                raw Salesforce data into analytics-ready datasets through multi-stage processing, enabling 
+                                executive-level business intelligence reporting.
+                            </li>
+                            <li>
+                                Authored comprehensive technical documentation and developer onboarding framework, reducing new 
+                                engineer ramp-up time by <strong>90%</strong> (7 weeks → 4 days). Led knowledge transfer to Deloitte 
+                                team covering architecture, pipelines, and production deployment.
+                            </li>
+                            <li>
+                                Recognized with <strong>5-star performance rating</strong> in first year (rare achievement for freshers)
+                            </li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Azure Databricks</span>
+                            <span class="tech-tag">Azure Cloud</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Salesforce</span>
+                            <span class="tech-tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atomstate -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Machine Learning Engineer</h3>
+                                <p class="experience-company">Atomstate Technologies Private Limited</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-duration">June 2023 - September 2023</span>
+                                <span class="experience-location">Hyderabad, India</span>
+                            </div>
+                        </div>
+
+                        <ul class="experience-list">
+                            <li>
+                                Developed and deployed a <strong>sentiment analysis engine</strong> using Natural Language Processing 
+                                techniques, enabling automated analysis of unstructured text data for business intelligence applications.
+                            </li>
+                            <li>
+                                Contributed to high-stakes <strong>election analysis project</strong> by building predictive models that 
+                                transformed raw electoral data into strategic insights, providing data-driven recommendations that shaped 
+                                campaign resource allocation.
+                            </li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zummit -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Junior Data Scientist</h3>
+                                <p class="experience-company">Zummit Infolabs</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-duration">November 2022 - March 2023</span>
+                                <span class="experience-location">Remote</span>
+                            </div>
+                        </div>
+
+                        <ul class="experience-list">
+                            <li>
+                                Applied advanced <strong>NLP techniques</strong> to extract actionable insights from ambiguous, 
+                                unstructured text data, creating analytical models that transformed raw content into structured 
+                                business intelligence for decision-making.
+                            </li>
+                        </ul>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Text Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Technical Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-description">
+                    Production-tested tools and technologies I use to build scalable, reliable software systems
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">C</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Apache Kafka</span>
+                        <span class="skill-item">Apache Spark</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">PySpark</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                        <h3>Databases & Storage</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">Redis</span>
+                        <span class="skill-item">SQL Server</span>
+                        <span class="skill-item">Data Modeling</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Azure Cloud</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Azure Databricks</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Docker Compose</span>
+                        <span class="skill-item">CI/CD Pipelines</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <h3>Core Competencies</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Data Structures & Algorithms</span>
+                        <span class="skill-item">System Design</span>
+                        <span class="skill-item">Distributed System</span>
+                        <span class="skill-item">Object-Oriented Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        <h3>Additional Skills</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">NLP</span>
+                        <span class="skill-item">Data Warehousing</span>
+                        <span class="skill-item">Streamlit</span>
+                        <span class="skill-item">Technical Documentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    I'm actively seeking Software Development Engineer opportunities at Amazon. 
+                    Let's discuss how I can contribute to building innovative products at scale.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:rahulkothagundla2002@gmail.com">rahulkothagundla2002@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <a href="tel:+918500157826">+91 8500157826</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Hyderabad, Telangana, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Open to Opportunities</h3>
+                    <p>I'm seeking Software Development Engineer roles where I can:</p>
+                    <ul>
+                        <li>Build scalable distributed systems</li>
+                        <li>Work on high-impact products</li>
+                        <li>Collaborate with world-class engineers</li>
+                        <li>Solve complex technical challenges</li>
+                    </ul>
+
+                    <div class="cta-buttons">
+                        <a href="assets/Rahul_Kothagundla_Resume.pdf" class="btn btn-primary" download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Resume
+                        </a>
+                    </div>
+
+                    <div class="social-links-large">
+                        <a href="https://linkedin.com/in/kothagundlarahul" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/RahulKothagundla" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://medium.com/@kothagundlarahul" target="_blank" rel="noopener">Medium</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2026 Rahul Kothagundla.</p>
+                    <p class="footer-note">This custom portfolio demonstrates my technical skills and genuine interest in joining Amazon.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="#home" class="footer-link">Back to Top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
