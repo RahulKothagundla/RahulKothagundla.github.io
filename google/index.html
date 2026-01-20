@@ -6,282 +6,367 @@
     <title>Rahul Kothagundla → Google Payments</title>
     <meta name="description" content="Software Engineer with distributed systems expertise seeking SWE role at Google Payments">
     <style>
+        :root{
+          --g-blue: #1a73e8;
+          --g-blue2: #1967d2;
+          --text: #202124;
+          --muted: #5f6368;
+          --border: #e8eaed;
+          --card-border: #dadce0;
+          --bg: #ffffff;
+          --bg-soft: #f8f9fa;
+          --shadow: 0 8px 24px rgba(32,33,36,0.08);
+          --shadow-hover: 0 12px 34px rgba(32,33,36,0.12);
+        }
+        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
         
+        /* Subtle background visual without altering content */
         body {
-            font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #202124;
-            background: #fff;
+          font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+          line-height: 1.6;
+          color: var(--text);
+          background:
+            radial-gradient(900px 600px at 10% -10%, rgba(26,115,232,0.10), transparent 60%),
+            radial-gradient(900px 600px at 90% 0%, rgba(25,103,210,0.08), transparent 55%),
+            var(--bg);
         }
         
+        /* KEY CHANGE: wider container + smaller side padding */
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+          max-width: 1120px;      /* was 900px */
+          margin: 0 auto;
+          padding: 28px 12px;     /* was 40px 20px */
         }
         
+        /* Hero: slightly tighter top/bottom to reduce vertical dead space */
         .hero {
-            text-align: center;
-            padding: 60px 0 40px;
-            border-bottom: 1px solid #e8eaed;
+          text-align: center;
+          padding: 44px 0 32px;   /* was 60px 0 40px */
+          border-bottom: 1px solid var(--border);
+          position: relative;
         }
         
+        /* Add a small visual underline effect to hero title (no content change) */
         .hero h1 {
-            font-size: 48px;
-            font-weight: 400;
-            margin-bottom: 16px;
-            color: #1a73e8;
+          font-size: 48px;
+          font-weight: 450;
+          margin-bottom: 14px;
+          color: var(--g-blue);
+          letter-spacing: -0.4px;
+        }
+        
+        /* Subtle emphasis line under hero */
+        .hero h1::after{
+          content:"";
+          display:block;
+          width: 110px;
+          height: 4px;
+          margin: 14px auto 0;
+          border-radius: 999px;
+          background: linear-gradient(90deg, rgba(26,115,232,0.0), rgba(26,115,232,0.9), rgba(26,115,232,0.0));
         }
         
         .hero p {
-            font-size: 20px;
-            color: #5f6368;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.5;
+          font-size: 18px;        /* slightly tighter */
+          color: var(--muted);
+          max-width: 820px;       /* allow more width on large screens */
+          margin: 0 auto;
+          line-height: 1.55;
         }
         
         .hero .metrics {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 32px;
-            flex-wrap: wrap;
+          display: flex;
+          justify-content: center;
+          gap: 34px;              /* slightly tighter */
+          margin-top: 26px;
+          flex-wrap: wrap;
         }
         
+        /* Metrics: add subtle card feel */
         .metric {
-            text-align: center;
+          text-align: center;
+          padding: 10px 14px;
+          border-radius: 10px;
+          background: rgba(248,249,250,0.75);
+          border: 1px solid rgba(232,234,237,0.9);
         }
         
         .metric .number {
-            font-size: 36px;
-            font-weight: 500;
-            color: #1a73e8;
-            display: block;
+          font-size: 34px;
+          font-weight: 600;
+          color: var(--g-blue);
+          display: block;
         }
         
         .metric .label {
-            font-size: 14px;
-            color: #5f6368;
-            margin-top: 4px;
+          font-size: 13px;
+          font-weight: 700;
+          color: #3c4043;
+          margin-top: 3px;
+        }
+        /* Metric cards: hover effect */
+        .metric {
+          text-align: center;
+          padding: 14px 18px;
+          border-radius: 14px;
+          background: rgba(255,255,255,0.9);
+          border: 1px solid rgba(218,220,224,0.95);
+          box-shadow: 0 1px 0 rgba(32,33,36,0.03);
+          transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+          will-change: transform;
         }
         
+        .metric:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 22px rgba(32,33,36,0.12);
+          border-color: rgba(26,115,232,0.45);
+          background: rgba(232,240,254,0.55);
+        }
+        
+        /* Optional: small emphasis on number on hover (still no content change) */
+        .metric:hover .number {
+          text-shadow: 0 6px 14px rgba(26,115,232,0.18);
+        }
+
+        
+        /* Sections: reduce left/right perceived whitespace by adding soft section blocks */
         .section {
-            padding: 60px 0;
-            border-bottom: 1px solid #e8eaed;
+          padding: 44px 0;        /* was 60px 0 */
+          border-bottom: 1px solid var(--border);
         }
         
         .section:last-child {
-            border-bottom: none;
+          border-bottom: none;
         }
         
         h2 {
-            font-size: 32px;
-            font-weight: 400;
-            margin-bottom: 24px;
-            color: #202124;
+          font-size: 30px;
+          font-weight: 500;
+          margin-bottom: 18px;
+          color: var(--text);
+          letter-spacing: -0.2px;
         }
         
+        /* WHY GOOGLE: add better spacing + shadow */
         .why-google {
-            display: grid;
-            gap: 24px;
+          display: grid;
+          gap: 18px;
         }
         
         .reason {
-            background: #f8f9fa;
-            padding: 24px;
-            border-radius: 8px;
-            border-left: 4px solid #1a73e8;
-            transition: transform 0.2s;
+          background: rgba(248,249,250,0.85);
+          padding: 22px;
+          border-radius: 12px;
+          border: 1px solid rgba(232,234,237,0.95);
+          border-left: 5px solid var(--g-blue);
+          transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+          box-shadow: 0 1px 0 rgba(32,33,36,0.03);
         }
         
         .reason:hover {
-            transform: translateX(4px);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow);
+          border-color: rgba(26,115,232,0.35);
         }
         
         .reason h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #1a73e8;
+          font-size: 18px;
+          margin-bottom: 10px;
+          color: var(--g-blue2);
         }
         
         .reason p {
-            color: #5f6368;
-            line-height: 1.6;
+          color: var(--muted);
+          line-height: 1.6;
         }
         
+        /* Projects: allow bigger cards and better density */
         .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 18px;
         }
         
         .project-card {
-            background: #fff;
-            border: 1px solid #dadce0;
-            border-radius: 8px;
-            padding: 24px;
-            transition: all 0.3s;
+          background: rgba(255,255,255,0.9);
+          border: 1px solid var(--card-border);
+          border-radius: 14px;
+          padding: 22px;
+          transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+          box-shadow: 0 1px 0 rgba(32,33,36,0.03);
         }
         
         .project-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #1a73e8;
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-hover);
+          border-color: rgba(26,115,232,0.55);
         }
         
         .project-card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #202124;
+          font-size: 18px;
+          margin-bottom: 8px;
+          color: var(--text);
         }
         
         .project-card .tech {
-            color: #1a73e8;
-            font-size: 13px;
-            margin-bottom: 12px;
-            font-weight: 500;
+          color: var(--g-blue2);
+          font-size: 13px;
+          margin-bottom: 10px;
+          font-weight: 600;
         }
         
         .project-card p {
-            color: #5f6368;
-            margin-bottom: 16px;
-            font-size: 14px;
+          color: var(--muted);
+          margin-bottom: 14px;
+          font-size: 14px;
         }
         
         .project-card .highlight {
-            background: #e8f0fe;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: #1967d2;
-            margin-bottom: 12px;
-            display: inline-block;
+          background: rgba(232,240,254,0.95);
+          border: 1px solid rgba(26,115,232,0.25);
+          padding: 7px 11px;
+          border-radius: 999px;
+          font-size: 12.5px;
+          color: var(--g-blue2);
+          margin-bottom: 12px;
+          display: inline-block;
+          font-weight: 600;
         }
         
         .project-card a {
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
+          color: var(--g-blue);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 14px;
         }
         
         .project-card a:hover {
-            text-decoration: underline;
+          text-decoration: underline;
         }
         
+        /* Skills grid: tighter gaps + improved visual consistency */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 14px;
         }
         
         .skill-category {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+          background: rgba(248,249,250,0.85);
+          padding: 18px;
+          border-radius: 12px;
+          border: 1px solid rgba(232,234,237,0.95);
+          box-shadow: 0 1px 0 rgba(32,33,36,0.03);
         }
         
         .skill-category h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: #1a73e8;
-            font-weight: 500;
+          font-size: 15px;
+          margin-bottom: 10px;
+          color: var(--g-blue2);
+          font-weight: 700;
         }
         
         .skill-category ul {
-            list-style: none;
+          list-style: none;
         }
         
         .skill-category li {
-            padding: 6px 0;
-            color: #5f6368;
-            font-size: 14px;
+          padding: 6px 0;
+          color: var(--muted);
+          font-size: 14px;
         }
         
         .skill-category li:before {
-            content: "✓";
-            color: #1a73e8;
-            font-weight: bold;
-            margin-right: 8px;
+          content: "✓";
+          color: var(--g-blue);
+          font-weight: 800;
+          margin-right: 8px;
         }
         
+        /* CTA: cleaner, more “Google-y” */
         .cta {
-            text-align: center;
-            padding: 40px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
-            margin: 40px 0;
+          text-align: center;
+          padding: 34px 16px;
+          background: rgba(248,249,250,0.85);
+          border: 1px solid rgba(232,234,237,0.95);
+          border-radius: 14px;
+          margin: 34px 0 10px;
+          box-shadow: 0 1px 0 rgba(32,33,36,0.03);
         }
         
         .cta h2 {
-            margin-bottom: 16px;
+          margin-bottom: 12px;
         }
         
         .cta p {
-            color: #5f6368;
-            margin-bottom: 32px;
-            font-size: 16px;
+          color: var(--muted);
+          margin-bottom: 22px;
+          font-size: 15px;
         }
         
         .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            margin: 8px;
-            background: #1a73e8;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background 0.3s;
-            font-size: 14px;
+          display: inline-block;
+          padding: 12px 26px;
+          margin: 6px;
+          background: var(--g-blue);
+          color: #fff;
+          text-decoration: none;
+          border-radius: 10px;
+          font-weight: 700;
+          transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+          font-size: 14px;
         }
         
         .btn:hover {
-            background: #1765cc;
-            box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+          background: #1765cc;
+          transform: translateY(-1px);
+          box-shadow: 0 10px 18px rgba(26,115,232,0.22);
         }
         
         .btn-secondary {
-            background: #fff;
-            color: #1a73e8;
-            border: 1px solid #1a73e8;
+          background: #fff;
+          color: var(--g-blue);
+          border: 1px solid rgba(26,115,232,0.65);
         }
         
         .btn-secondary:hover {
-            background: #f8f9fa;
+          background: rgba(232,240,254,0.65);
+          box-shadow: 0 8px 14px rgba(32,33,36,0.08);
         }
         
         footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #5f6368;
-            font-size: 14px;
-            border-top: 1px solid #e8eaed;
-            margin-top: 40px;
+          text-align: center;
+          padding: 26px 0 10px;
+          color: var(--muted);
+          font-size: 13px;
+          border-top: 1px solid var(--border);
+          margin-top: 24px;
         }
         
+        /* Responsive: keep reduced side padding but readable */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .projects {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+          .container {
+            padding: 22px 12px;
+          }
+          .hero h1 {
+            font-size: 32px;
+          }
+          .hero p {
+            font-size: 16px;
+          }
+          .projects {
+            grid-template-columns: 1fr;
+          }
+          .skills-grid {
+            grid-template-columns: 1fr;
+          }
         }
+
     </style>
 </head>
 <body>
@@ -313,17 +398,17 @@
             <div class="why-google">
                 <div class="reason">
                     <h3>🌍 Payments Democratize Financial Access</h3>
-                    <p>I've built distributed systems processing 50K+ daily records at TCS. Google Payments mission to make payments simple, seamless, and secure for billions resonates deeply with my experience in building production systems that handle financial data with integrity.</p>
+                    <p>I've built distributed systems processing 50K+ daily records at TCS. Google Payments mission to make payments simple, seamless and secure for billions resonates deeply with my experience in building production systems that handle financial data with integrity.</p>
                 </div>
                 
                 <div class="reason">
                     <h3>⚡ Scale Challenges Excite Me</h3>
-                    <p>Working with distributed systems (Kafka, Spark, Azure Databricks) taught me that scale isn't just about handling more load—it's about elegant architecture that maintains reliability. Google's payment infrastructure serving billions of users is exactly where I want to apply this expertise.</p>
+                    <p>Working with distributed systems (Kafka, Spark, Azure Databricks) taught me that scale isn't just about handling more load - it's about elegant architecture that maintains reliability. Google's payment infrastructure serving billions of users is exactly where I want to apply this expertise.</p>
                 </div>
                 
                 <div class="reason">
                     <h3>💻 Code Quality Matters</h3>
-                    <p>I've conducted 15+ code reviews, established coding standards, and debugged production issues using distributed tracing. My payment processing API has 85%+ test coverage using pytest. Google's engineering culture of technical excellence and best practices is where I thrive.</p>
+                    <p>I've conducted 15+ code reviews, established coding standards and debugged production issues using distributed tracing. My payment processing API has 85%+ test coverage using pytest. Google's engineering culture of technical excellence and best practices is where I thrive.</p>
                 </div>
             </div>
         </div>
@@ -336,9 +421,9 @@
                     <h3>Distributed Payment Transaction System</h3>
                     <div class="tech">Python • FastAPI • PostgreSQL • Redis • Kafka</div>
                     <div class="highlight">85%+ Test Coverage</div>
-                    <p>Production-grade payment processing API with idempotency keys, ACID transactions, fraud detection, and distributed locking. Demonstrates deep understanding of payment systems architecture and challenges at scale.</p>
+                    <p>Production-grade payment processing API with idempotency keys, ACID transactions, fraud detection and distributed locking. Demonstrates deep understanding of payment systems architecture and challenges at scale.</p>
                     <p><strong>Key Features:</strong> Transaction state machine, webhook notifications, CI/CD pipeline, comprehensive documentation</p>
-                    <a href="https://github.com/rahulkothagundla/payment-system" target="_blank">View on GitHub →</a>
+                    <a href="https://github.com/RahulKothagundla/Distributed-Payment-Transaction-System" target="_blank">View on GitHub →</a>
                 </div>
                 
                 <div class="project-card">
@@ -347,7 +432,7 @@
                     <div class="highlight">99.9% Uptime</div>
                     <p>Distributed streaming platform processing 1000+ events/second with sub-30s latency. Fault-tolerant design with exactly-once semantics demonstrating distributed systems expertise.</p>
                     <p><strong>Key Features:</strong> Kafka partitioning, Spark streaming, Redis caching (60% load reduction), containerized microservices</p>
-                    <a href="https://github.com/rahulkothagundla/stock-streaming" target="_blank">View on GitHub →</a>
+                    <a href="https://github.com/RahulKothagundla/realtime-stock-pipeline" target="_blank">View on GitHub →</a>
                 </div>
                 
                 <div class="project-card">
@@ -362,12 +447,12 @@
         
         <!-- Technical Fit Section -->
         <div class="section">
-            <h2>Technical Fit for SWE II, Payments</h2>
+            <h2>Technical Fit for SWE, Payments</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Google Requirements (100% Match)</h3>
                     <ul>
-                        <li>1+ year software development (1.5 years)</li>
+                        <li>1+ year software development</li>
                         <li>Python, Java, C++, C, SQL</li>
                         <li>Bachelor's in CS (CGPA 8.55)</li>
                         <li>Production system experience</li>
@@ -407,10 +492,10 @@
         <!-- CTA Section -->
         <div class="cta">
             <h2>Let's Build the Future of Payments</h2>
-            <p>I'm excited to bring my distributed systems expertise to Google Payments<br>and help serve the next billion users with simple, seamless, and secure payments.</p>
-            <a href="rahul_kothagundla_google_resume.pdf" class="btn" download>Download Resume</a>
-            <a href="https://linkedin.com/in/rahulkothagundla" class="btn btn-secondary" target="_blank">LinkedIn</a>
-            <a href="https://github.com/rahulkothagundla" class="btn btn-secondary" target="_blank">GitHub</a>
+            <p>I'm excited to bring my distributed systems expertise to Google Payments<br>and help serve the next billion users with simple, seamless and secure payments.</p>
+            <a href="Rahul_Resume_Google.pdf" class="btn" download>Download Resume</a>
+            <a href="https://linkedin.com/in/kothagundlarahul" class="btn btn-secondary" target="_blank">LinkedIn</a>
+            <a href="https://github.com/RahulKothagundla" class="btn btn-secondary" target="_blank">GitHub</a>
         </div>
     </div>
     
