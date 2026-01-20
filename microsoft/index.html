@@ -195,10 +195,11 @@
 
         /* ==================== RELEVANT WORK ==================== */
         .work-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-            margin-top: 10px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 14px;
+          margin-top: 10px;
+          align-items: stretch;
         }
 
         .work-card {
@@ -514,19 +515,11 @@
                 </div>
 
                 <div class="work-card">
-                    <h3>Real-Time Market Data Streaming Platform</h3>
+                    <h3>Real-Time Market Data Streaming</h3>
                     <div class="tech">Python • Apache Kafka • Apache Spark • PostgreSQL • Redis • Docker</div>
                     <div class="pill">99.9% System Uptime</div>
                     <p>Engineered distributed streaming infrastructure processing live stock market data with sub-30s latency, handling 1000+ events/second using Apache Kafka with 3-partition topic configuration and fault tolerant producer/consumer design.</p>
                     <p><strong>Key Features:</strong> Spark Structured Streaming with exactly once processing semantics; Redis caching layer reducing database load by 60%.</p>
-                </div>
-
-                <div class="work-card">
-                    <h3>Machine Learning Engineer @ Atomstate</h3>
-                    <div class="tech">NLP • Data Pipelines • Model Serving</div>
-                    <div class="pill">Production Pipeline</div>
-                    <p>Built and deployed NLP based sentiment analysis service with automated data pipeline architecture, processing unstructured text at scale using distributed inference framework.</p>
-                    <p>Developed predictive modeling infrastructure processing large datasets for analytics platform, implementing automated data ingestion and model serving layers.</p>
                 </div>
             </div>
         </div>
