@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Kothagundla → Google Payments</title>
+    <meta name="description" content="Software Engineer with distributed systems expertise seeking SWE role at Google Payments">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #202124;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e8eaed;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: #1a73e8;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #5f6368;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .hero .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric .number {
+            font-size: 36px;
+            font-weight: 500;
+            color: #1a73e8;
+            display: block;
+        }
+        
+        .metric .label {
+            font-size: 14px;
+            color: #5f6368;
+            margin-top: 4px;
+        }
+        
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e8eaed;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: #202124;
+        }
+        
+        .why-google {
+            display: grid;
+            gap: 24px;
+        }
+        
+        .reason {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+            transition: transform 0.2s;
+        }
+        
+        .reason:hover {
+            transform: translateX(4px);
+        }
+        
+        .reason h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1a73e8;
+        }
+        
+        .reason p {
+            color: #5f6368;
+            line-height: 1.6;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #1a73e8;
+        }
+        
+        .project-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #202124;
+        }
+        
+        .project-card .tech {
+            color: #1a73e8;
+            font-size: 13px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .project-card p {
+            color: #5f6368;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        
+        .project-card .highlight {
+            background: #e8f0fe;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #1967d2;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .project-card a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #1a73e8;
+            font-weight: 500;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 6px 0;
+            color: #5f6368;
+            font-size: 14px;
+        }
+        
+        .skill-category li:before {
+            content: "✓";
+            color: #1a73e8;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .cta h2 {
+            margin-bottom: 16px;
+        }
+        
+        .cta p {
+            color: #5f6368;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            margin: 8px;
+            background: #1a73e8;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: #1765cc;
+            box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+        }
+        
+        .btn-secondary {
+            background: #fff;
+            color: #1a73e8;
+            border: 1px solid #1a73e8;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #5f6368;
+            font-size: 14px;
+            border-top: 1px solid #e8eaed;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Hi Google 👋 I'm Rahul</h1>
+            <p>Software Engineer who reduced system latency by 70% and wants to help Google Payments serve the next billion users</p>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <span class="number">70%</span>
+                    <span class="label">Performance Improvement</span>
+                </div>
+                <div class="metric">
+                    <span class="number">99.9%</span>
+                    <span class="label">Data Integrity</span>
+                </div>
+                <div class="metric">
+                    <span class="number">5⭐</span>
+                    <span class="label">Performance Rating</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Why Google Section -->
+        <div class="section">
+            <h2>Why Google Payments?</h2>
+            <div class="why-google">
+                <div class="reason">
+                    <h3>🌍 Payments Democratize Financial Access</h3>
+                    <p>I've built distributed systems processing 50K+ daily records at TCS. Google Payments mission to make payments simple, seamless, and secure for billions resonates deeply with my experience in building production systems that handle financial data with integrity.</p>
+                </div>
+                
+                <div class="reason">
+                    <h3>⚡ Scale Challenges Excite Me</h3>
+                    <p>Working with distributed systems (Kafka, Spark, Azure Databricks) taught me that scale isn't just about handling more load—it's about elegant architecture that maintains reliability. Google's payment infrastructure serving billions of users is exactly where I want to apply this expertise.</p>
+                </div>
+                
+                <div class="reason">
+                    <h3>💻 Code Quality Matters</h3>
+                    <p>I've conducted 15+ code reviews, established coding standards, and debugged production issues using distributed tracing. My payment processing API has 85%+ test coverage using pytest. Google's engineering culture of technical excellence and best practices is where I thrive.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Relevant Work</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Distributed Payment Transaction System</h3>
+                    <div class="tech">Python • FastAPI • PostgreSQL • Redis • Kafka</div>
+                    <div class="highlight">85%+ Test Coverage</div>
+                    <p>Production-grade payment processing API with idempotency keys, ACID transactions, fraud detection, and distributed locking. Demonstrates deep understanding of payment systems architecture and challenges at scale.</p>
+                    <p><strong>Key Features:</strong> Transaction state machine, webhook notifications, CI/CD pipeline, comprehensive documentation</p>
+                    <a href="https://github.com/rahulkothagundla/payment-system" target="_blank">View on GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Real-Time Stock Market Streaming</h3>
+                    <div class="tech">Python • Kafka • Spark • PostgreSQL • Redis</div>
+                    <div class="highlight">99.9% Uptime</div>
+                    <p>Distributed streaming platform processing 1000+ events/second with sub-30s latency. Fault-tolerant design with exactly-once semantics demonstrating distributed systems expertise.</p>
+                    <p><strong>Key Features:</strong> Kafka partitioning, Spark streaming, Redis caching (60% load reduction), containerized microservices</p>
+                    <a href="https://github.com/rahulkothagundla/stock-streaming" target="_blank">View on GitHub →</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Production System @ TCS</h3>
+                    <div class="tech">Azure Databricks • Python • SQL</div>
+                    <div class="highlight">Used by 500+ Enterprise Users</div>
+                    <p>Architected distributed data processing system achieving 70% performance improvement (15min → 7min). Led code reviews for engineers and maintained 99.9% data integrity.</p>
+                    <p><strong>Impact:</strong> Zero corruption incidents, 90% faster onboarding, 5-star performance rating</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical Fit Section -->
+        <div class="section">
+            <h2>Technical Fit for SWE II, Payments</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Google Requirements (100% Match)</h3>
+                    <ul>
+                        <li>1+ year software development (1.5 years)</li>
+                        <li>Python, Java, C++, C, SQL</li>
+                        <li>Bachelor's in CS (CGPA 8.55)</li>
+                        <li>Production system experience</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Distributed Systems</h3>
+                    <ul>
+                        <li>Apache Kafka (messaging)</li>
+                        <li>Apache Spark (processing)</li>
+                        <li>Redis (caching & locking)</li>
+                        <li>PostgreSQL (ACID transactions)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Code Quality & Testing</h3>
+                    <ul>
+                        <li>Test coverage (85%+ with pytest)</li>
+                        <li>CI/CD pipelines</li>
+                        <li>Production debugging</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Problem Solving</h3>
+                    <ul>
+                        <li>System design expertise</li>
+                        <li>Distributed systems challenges</li>
+                        <li>Amazon ML Summer School 2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta">
+            <h2>Let's Build the Future of Payments</h2>
+            <p>I'm excited to bring my distributed systems expertise to Google Payments<br>and help serve the next billion users with simple, seamless, and secure payments.</p>
+            <a href="rahul_kothagundla_google_resume.pdf" class="btn" download>Download Resume</a>
+            <a href="https://linkedin.com/in/rahulkothagundla" class="btn btn-secondary" target="_blank">LinkedIn</a>
+            <a href="https://github.com/rahulkothagundla" class="btn btn-secondary" target="_blank">GitHub</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Built with care for Google Payments • Last updated: January 2026</p>
+        <p style="margin-top: 8px;">Rahul Kothagundla • rahulkothagundla2002@gmail.com</p>
+    </footer>
+</body>
+</html>
