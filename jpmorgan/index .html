@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Kothagundla | Software Engineer</title>
+
+  <!-- Optional: nicer typography (content unchanged) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* -----------------------------
+       RESET + THEME
+    --------------------------------*/
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --jp-blue: #0073CF;
+      --jp-blue-2: #0A5DB7;
+      --jp-dark: #0F1A24;
+      --jp-gray: #5D6D7E;
+      --jp-light: #F7F9FC;
+      --jp-accent: #00A0DC;
+
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-solid: #ffffff;
+
+      --shadow-sm: 0 6px 18px rgba(15, 26, 36, 0.08);
+      --shadow-md: 0 10px 30px rgba(15, 26, 36, 0.12);
+      --shadow-lg: 0 16px 50px rgba(15, 26, 36, 0.18);
+
+      --radius-md: 14px;
+      --radius-lg: 18px;
+
+      --ring: 0 0 0 4px rgba(0, 115, 207, 0.18);
+      --border: rgba(15, 26, 36, 0.10);
+
+      --maxw: 1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--jp-dark);
+      overflow-x: hidden;
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(0, 115, 207, 0.14), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(0, 160, 220, 0.10), transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 30%, #F6F8FB 100%);
+    }
+
+    /* Better text rendering */
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* Accessible focus */
+    a:focus-visible, button:focus-visible {
+      outline: none;
+      box-shadow: var(--ring);
+      border-radius: 10px;
+    }
+
+    /* -----------------------------
+       LAYOUT HELPERS
+    --------------------------------*/
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 64px 20px;
+    }
+
+    .section { margin-bottom: 56px; }
+
+    /* -----------------------------
+       HERO
+    --------------------------------*/
+    .hero {
+      position: relative;
+      isolation: isolate;
+      color: white;
+      padding: 92px 20px 72px;
+      text-align: center;
+      background:
+        radial-gradient(1000px 500px at 20% 10%, rgba(255,255,255,0.22), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(255,255,255,0.16), transparent 55%),
+        linear-gradient(135deg, var(--jp-blue) 0%, var(--jp-blue-2) 55%, #053A7A 100%);
+      overflow: hidden;
+    }
+
+    /* Decorative grid glow (no content change) */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        linear-gradient(to right, rgba(255,255,255,0.10) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.22;
+      transform: perspective(800px) rotateX(52deg) translateY(-30%);
+      transform-origin: top;
+      z-index: -1;
+      pointer-events: none;
+      mask-image: radial-gradient(60% 60% at 50% 25%, black 0%, transparent 70%);
+    }
+
+    /* Bottom wave */
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 80px;
+      background: #fff;
+      clip-path: polygon(0 55%, 12% 70%, 25% 55%, 38% 75%, 50% 58%, 62% 78%, 75% 60%, 88% 74%, 100% 58%, 100% 100%, 0 100%);
+      z-index: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+      font-weight: 400;
+      opacity: 0.95;
+      margin: 0 auto 28px;
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .contact-links a {
+      color: white;
+      text-decoration: none;
+      padding: 11px 18px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      font-weight: 600;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+      will-change: transform;
+    }
+
+    .hero .contact-links a:hover {
+      background: rgba(255,255,255,0.22);
+      border-color: rgba(255,255,255,0.40);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+    }
+
+    /* -----------------------------
+       STATS
+    --------------------------------*/
+    .stats {
+      position: relative;
+      margin-top: -26px;
+      z-index: 5;
+      padding: 0 20px;
+    }
+
+    .stats-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      background: var(--surface);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.55);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      padding: 22px 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(15, 26, 36, 0.06);
+      background: rgba(255,255,255,0.65);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-number {
+      font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+      font-weight: 800;
+      color: var(--jp-blue);
+      display: block;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      color: var(--jp-gray);
+      font-size: 0.95em;
+      margin-top: 6px;
+      line-height: 1.25;
+    }
+
+    /* -----------------------------
+       SECTION TITLES
+    --------------------------------*/
+    .section-title {
+      font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+      color: var(--jp-dark);
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 86px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--jp-blue), var(--jp-accent));
+      border-radius: 999px;
+    }
+
+    /* -----------------------------
+       ABOUT
+    --------------------------------*/
+    .about-text {
+      font-size: 1.08em;
+      line-height: 1.9;
+      color: rgba(93, 109, 126, 0.98);
+      max-width: 940px;
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(15, 26, 36, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 22px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* -----------------------------
+       PROJECT CARD
+    --------------------------------*/
+    .project-card {
+      position: relative;
+      background: rgba(255,255,255,0.72);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      border: 1px solid rgba(15, 26, 36, 0.10);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Subtle accent edge */
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 6px solid transparent;
+      border-image: linear-gradient(180deg, var(--jp-blue), var(--jp-accent)) 1;
+      pointer-events: none;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle at 30% 30%, rgba(0,115,207,0.18), transparent 60%);
+      transform: rotate(10deg);
+      pointer-events: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-title {
+      font-size: 1.55em;
+      color: var(--jp-dark);
+      margin-bottom: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-badge {
+      background: rgba(255,255,255,0.85);
+      color: var(--jp-blue);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.86em;
+      font-weight: 700;
+      border: 1px solid rgba(0,115,207,0.35);
+      box-shadow: 0 10px 18px rgba(15, 26, 36, 0.06);
+    }
+
+    .project-description {
+      color: rgba(93, 109, 126, 0.98);
+      line-height: 1.9;
+      font-size: 1.03em;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-box {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(0,160,220,0.20);
+      border-left: 5px solid var(--jp-accent);
+      padding: 14px 18px;
+      margin: 18px 0;
+      border-radius: 14px;
+      box-shadow: 0 10px 18px rgba(15, 26, 36, 0.06);
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-box strong { color: var(--jp-blue); }
+
+    /* -----------------------------
+       SKILLS GRID
+    --------------------------------*/
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(15, 26, 36, 0.10);
+      padding: 22px;
+      border-radius: var(--radius-md);
+      text-align: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(380px 140px at 50% 0%, rgba(0,115,207,0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,115,207,0.35);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-card:hover::before { opacity: 1; }
+
+    .skill-card h3 {
+      color: var(--jp-blue);
+      margin-bottom: 10px;
+      font-size: 1.05em;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skill-list {
+      color: rgba(93, 109, 126, 0.98);
+      font-size: 0.95em;
+      line-height: 1.85;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* -----------------------------
+       CTA
+    --------------------------------*/
+    .cta-section {
+      position: relative;
+      color: white;
+      padding: 72px 20px;
+      text-align: center;
+      margin-top: 56px;
+      background:
+        radial-gradient(900px 500px at 20% 30%, rgba(0,160,220,0.20), transparent 55%),
+        radial-gradient(700px 420px at 90% 10%, rgba(0,115,207,0.24), transparent 55%),
+        linear-gradient(135deg, #0F1A24 0%, #1B2D3D 45%, #0F1A24 100%);
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(500px 220px at 50% 0%, rgba(255,255,255,0.14), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.35rem);
+      margin-bottom: 14px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section p {
+      font-size: 1.15em;
+      margin-bottom: 28px;
+      opacity: 0.9;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      background: linear-gradient(90deg, var(--jp-blue), var(--jp-accent));
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.05em;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 22px 55px rgba(0,0,0,0.28);
+    }
+
+    /* -----------------------------
+       FOOTER
+    --------------------------------*/
+    footer {
+      background: #0F1A24;
+      color: rgba(255,255,255,0.72);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.92em;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* -----------------------------
+       ANIMATIONS (reduced-motion safe)
+    --------------------------------*/
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section { animation: fadeInUp 0.65s ease-out both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .section { animation: none; }
+      .hero .contact-links a,
+      .project-card,
+      .skill-card,
+      .stat-item,
+      .cta-button { transition: none; }
+    }
+
+    /* -----------------------------
+       RESPONSIVE
+    --------------------------------*/
+    @media (max-width: 980px) {
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 78px 16px 66px; }
+      .container { padding: 56px 16px; }
+      .project-card { padding: 24px; }
+      .about-text { padding: 18px; }
+    }
+
+    @media (max-width: 520px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .hero .contact-links a { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Rahul Kothagundla</h1>
+    <p class="tagline">Building scalable backend systems that handle real-time data at scale</p>
+    <div class="contact-links">
+      <a href="mailto:rahulkothagundla2002@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/rahul-kothagundla" target="_blank">LinkedIn</a>
+      <a href="https://github.com/rahulkothagundla" target="_blank">GitHub</a>
+      <a href="tel:+918500157826">+91-8500157826</a>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-number">70%</span>
+        <span class="stat-label">Performance Improvement</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50K+</span>
+        <span class="stat-label">Daily Records Processed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">99.9%</span>
+        <span class="stat-label">System Uptime</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">1.5+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- About Section -->
+    <section class="section">
+      <h2 class="section-title">About</h2>
+      <p class="about-text">
+        I'm a backend engineer at TCS who gets genuinely excited about building systems that need to be both fast and reliable. Recently re-architected a critical financial data pipeline—cut processing time by 70% while maintaining zero data loss across 50,000+ daily transactions. Whether it's designing distributed architectures with Kafka and Spark, or troubleshooting production issues at 2 AM, I'm in my element solving hard technical problems. Proficient in Java and Python, with hands-on experience building production systems that financial executives actually depend on for real-time decision-making.
+      </p>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="section">
+      <h2 class="section-title">Featured Project</h2>
+      <div class="project-card">
+        <h3 class="project-title">Real-Time Stock Market Streaming Platform</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Kafka</span>
+          <span class="tech-badge">Spark</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">Redis</span>
+          <span class="tech-badge">Docker</span>
+        </div>
+        <p class="project-description">
+          Built this to understand how real trading systems work—specifically, how to process 1,000+ stock price updates per second without dropping data or showing stale information. The system uses Kafka for message queuing with 3 partitions for parallel processing, Spark Structured Streaming with exactly-once semantics, and PostgreSQL with optimized composite indexes for time-series queries.
+        </p>
+        <div class="highlight-box">
+          <strong>Key Achievement:</strong> Added Redis caching layer that reduced database load by 60%, enabling sub-30 second latency for real-time market analytics. Containerized with Docker for production-ready deployment with self-healing capabilities.
+        </div>
+        <p class="project-description">
+          This project taught me that building resilient systems isn't about preventing failures—it's about designing systems that gracefully handle inevitable failures. Services can crash and restart, and the system just keeps running. Hit 99.9% uptime during testing, which I know is critical for anything running in a bank's infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Languages</h3>
+          <p class="skill-list">Java • Python<br>C++ • SQL</p>
+        </div>
+        <div class="skill-card">
+          <h3>Distributed Systems</h3>
+          <p class="skill-list">Kafka • Spark<br>Microservices • REST APIs</p>
+        </div>
+        <div class="skill-card">
+          <h3>Databases</h3>
+          <p class="skill-list">PostgreSQL • Redis<br>SQL Server • Query Optimization</p>
+        </div>
+        <div class="skill-card">
+          <h3>Cloud & DevOps</h3>
+          <p class="skill-list">Azure • AWS • Docker<br>CI/CD • Git</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Let's Build Something Great</h2>
+    <p>Interested in working together? I'd love to hear about the challenges you're solving.</p>
+    <a href="mailto:rahulkothagundla2002@gmail.com" class="cta-button">Get In Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Rahul Kothagundla • Software Engineer • Hyderabad, India</p>
+  </footer>
+</body>
+</html>
