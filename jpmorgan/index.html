@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,13 @@
 
   <style>
     /* =========================================================
-       PRODUCTION-GRADE UI/UX (NO CONTENT CHANGES)
-       - Better hierarchy, spacing, readability
-       - Accessibility: focus, reduced motion, dark mode
-       - Recruiter-friendly: print stylesheet
+       FINAL PRODUCTION-GRADE UI/UX (NO CONTENT CHANGES)
+       Fixes applied:
+       - Consistent new blue palette everywhere (removed old JP rgba blues)
+       - Restored + hardened Stats layout (grid + glass + proper layering)
+       - Straight hero divider (no wave) + ensured hero text stays above pseudos
+       - Removed color-mix dependency (better browser compatibility)
+       - Fixed overlay layering (glows won't cover text/cards)
     ========================================================== */
 
     /* -----------------------------
@@ -27,10 +31,14 @@
     body { min-height: 100vh; }
 
     :root {
-      /* Brand (kept) */
-      --jp-blue: #0073CF;
-      --jp-blue-2: #0A5DB7;
-      --jp-accent: #00A0DC;
+      /* Brand */
+      --jp-blue:   #2563EB; /* primary */
+      --jp-blue-2: #1D4ED8; /* deeper */
+      --jp-accent: #38BDF8; /* cyan accent */
+
+      --jp-dark: #0B1220;
+      --jp-gray: #5B6B7C;
+      --jp-light: #F7F9FC;
 
       /* Neutral system */
       --ink-0: #0B1220;
@@ -59,7 +67,7 @@
       --r-pill: 999px;
 
       /* Focus */
-      --ring: 0 0 0 4px rgba(0, 115, 207, 0.22);
+      --ring: 0 0 0 4px rgba(37, 99, 235, 0.22);
 
       /* Layout */
       --maxw: 1120px;
@@ -87,9 +95,10 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
 
+      /* Updated to match new palette (no legacy blues) */
       background:
-        radial-gradient(1200px 800px at 20% -10%, rgba(0, 115, 207, 0.16), transparent 55%),
-        radial-gradient(900px 600px at 90% 10%, rgba(0, 160, 220, 0.10), transparent 52%),
+        radial-gradient(1200px 800px at 20% -10%, rgba(37, 99, 235, 0.16), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(56, 189, 248, 0.12), transparent 52%),
         linear-gradient(180deg, var(--bg-0) 0%, var(--bg-0) 30%, var(--bg-1) 100%);
     }
 
@@ -100,8 +109,8 @@
       border-radius: 10px;
     }
 
-    /* Subtle selection */
-    ::selection { background: rgba(0, 115, 207, 0.20); }
+    /* Subtle selection (updated to new palette) */
+    ::selection { background: rgba(37, 99, 235, 0.20); }
 
     /* -----------------------------
        LAYOUT HELPERS
@@ -114,7 +123,6 @@
 
     .section { margin-bottom: 64px; }
 
-    /* Improved vertical rhythm on small screens */
     @media (max-width: 768px) {
       .container { padding: 56px 16px; }
       .section { margin-bottom: 56px; }
@@ -132,12 +140,11 @@
       overflow: hidden;
 
       background:
-        radial-gradient(1100px 520px at 18% 12%, rgba(255,255,255,0.24), transparent 55%),
-        radial-gradient(950px 520px at 92% 18%, rgba(255,255,255,0.16), transparent 55%),
-        linear-gradient(135deg, var(--jp-blue) 0%, var(--jp-blue-2) 55%, #053A7A 100%);
+        radial-gradient(1100px 520px at 18% 12%, rgba(255,255,255,0.22), transparent 55%),
+        radial-gradient(950px 520px at 92% 18%, rgba(255,255,255,0.14), transparent 55%),
+        linear-gradient(135deg, var(--jp-blue) 0%, var(--jp-blue-2) 55%, #0B2A6F 100%);
     }
 
-    /* Subtle premium texture + vignette */
     .hero::before {
       content: "";
       position: absolute;
@@ -154,15 +161,24 @@
       mask-image: radial-gradient(60% 60% at 50% 25%, #000 0%, transparent 72%);
     }
 
+    /* Straight divider */
     .hero::after {
       content: "";
       position: absolute;
       left: 0; right: 0; bottom: -1px;
-      height: 84px;
-      background: var(--bg-0);
-      clip-path: polygon(0 55%, 12% 70%, 25% 55%, 38% 75%, 50% 58%, 62% 78%, 75% 60%, 88% 74%, 100% 58%, 100% 100%, 0 100%);
-      z-index: -1;
+      height: 28px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+      clip-path: none;
+      border-bottom: 0;
+      box-shadow: 0 1px 0 rgba(15, 26, 36, 0.08);
+      z-index: -1; /* ensure it never sits above hero content */
+      pointer-events: none;
     }
+
+    /* Ensure hero content is above pseudos */
+    .hero h1,
+    .hero .tagline,
+    .hero .contact-links { position: relative; z-index: 1; }
 
     .hero h1 {
       font-size: var(--fs-4);
@@ -207,7 +223,6 @@
       will-change: transform;
     }
 
-    /* Backdrop-filter only when supported */
     @supports (backdrop-filter: blur(10px)) {
       .hero .contact-links a { backdrop-filter: blur(10px); }
     }
@@ -233,21 +248,40 @@
       max-width: var(--maxw);
       margin: 0 auto;
 
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.60);
-      box-shadow: var(--shadow-2);
-      border-radius: var(--r-lg);
-      padding: 18px;
-
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
 
-      /* crisp separation */
+      padding: 18px;
+      border-radius: var(--r-lg);
+
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.60);
+      box-shadow: var(--shadow-2);
+
       backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glow overlay UNDER the cards */
+    .stats-inner::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(37,99,235,0.18), rgba(0,0,0,0));
+      pointer-events:none;
+      opacity: 0.9;
+      z-index: 0;
     }
 
     .stat-item {
+      position: relative;
+      z-index: 1;
+
       text-align: center;
       padding: 16px 12px;
       border-radius: 16px;
@@ -286,7 +320,7 @@
     }
 
     /* -----------------------------
-       SECTION TITLES (clear hierarchy)
+       SECTION TITLES
     --------------------------------*/
     .section-title {
       font-size: var(--fs-3);
@@ -306,11 +340,11 @@
       height: 4px;
       border-radius: var(--r-pill);
       background: linear-gradient(90deg, var(--jp-blue), var(--jp-accent));
-      box-shadow: 0 10px 18px rgba(0, 115, 207, 0.18);
+      box-shadow: 0 10px 18px rgba(37, 99, 235, 0.20);
     }
 
     /* -----------------------------
-       ABOUT (readability upgrade)
+       ABOUT
     --------------------------------*/
     .about-text {
       max-width: 940px;
@@ -326,7 +360,7 @@
     }
 
     /* -----------------------------
-       PROJECT (Interview-ready clarity)
+       PROJECT
     --------------------------------*/
     .project-card {
       position: relative;
@@ -339,7 +373,6 @@
       transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
     }
 
-    /* Premium edge accent */
     .project-card::before {
       content: "";
       position: absolute;
@@ -347,9 +380,10 @@
       border-left: 6px solid transparent;
       border-image: linear-gradient(180deg, var(--jp-blue), var(--jp-accent)) 1;
       pointer-events: none;
+      z-index: 0;
     }
 
-    /* Soft highlight blob */
+    /* Updated accent blob to new palette */
     .project-card::after {
       content: "";
       position: absolute;
@@ -357,9 +391,10 @@
       right: -220px;
       width: 460px;
       height: 460px;
-      background: radial-gradient(circle at 30% 30%, rgba(0,115,207,0.18), transparent 60%);
+      background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.18), transparent 60%);
       transform: rotate(12deg);
       pointer-events: none;
+      z-index: 0;
     }
 
     .project-card:hover {
@@ -367,14 +402,17 @@
       box-shadow: var(--shadow-3);
     }
 
+    .project-title,
+    .tech-stack,
+    .project-description,
+    .highlight-box { position: relative; z-index: 1; }
+
     .project-title {
       font-size: clamp(1.35rem, 1.2vw + 1.1rem, 1.65rem);
       font-weight: 900;
       letter-spacing: -0.03em;
       color: var(--ink-1);
       margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
     }
 
     .tech-stack {
@@ -382,8 +420,6 @@
       flex-wrap: wrap;
       gap: 10px;
       margin: 14px 0 8px;
-      position: relative;
-      z-index: 1;
     }
 
     .tech-badge {
@@ -400,7 +436,7 @@
 
       color: var(--jp-blue);
       background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(0,115,207,0.34);
+      border: 1px solid rgba(37,99,235,0.34); /* updated */
       box-shadow: 0 12px 22px rgba(15, 26, 36, 0.06);
     }
 
@@ -409,8 +445,6 @@
       font-size: var(--fs-0);
       line-height: 1.95;
       color: rgba(93, 109, 126, 0.98);
-      position: relative;
-      z-index: 1;
     }
 
     .highlight-box {
@@ -419,12 +453,9 @@
       border-radius: 16px;
 
       background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(0,160,220,0.22);
+      border: 1px solid rgba(56,189,248,0.26); /* updated */
       border-left: 5px solid var(--jp-accent);
       box-shadow: 0 14px 24px rgba(15, 26, 36, 0.06);
-
-      position: relative;
-      z-index: 1;
     }
 
     .highlight-box strong { color: var(--jp-blue); font-weight: 900; }
@@ -435,7 +466,7 @@
     }
 
     /* -----------------------------
-       SKILLS (Recruiter scan layout)
+       SKILLS
     --------------------------------*/
     .skills-grid {
       display: grid;
@@ -458,11 +489,12 @@
       transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
     }
 
+    /* Updated glow to new palette */
     .skill-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(420px 160px at 50% 0%, rgba(0,115,207,0.12), transparent 60%);
+      background: radial-gradient(420px 160px at 50% 0%, rgba(37,99,235,0.12), transparent 60%);
       opacity: 0;
       transition: opacity var(--dur-2) var(--ease);
       pointer-events: none;
@@ -470,10 +502,13 @@
 
     .skill-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(0,115,207,0.34);
+      border-color: rgba(37,99,235,0.34); /* updated */
       box-shadow: var(--shadow-2);
     }
     .skill-card:hover::before { opacity: 1; }
+
+    .skill-card h3,
+    .skill-list { position: relative; z-index: 1; }
 
     .skill-card h3 {
       font-size: 1.05em;
@@ -481,16 +516,12 @@
       letter-spacing: -0.02em;
       color: var(--jp-blue);
       margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
     }
 
     .skill-list {
       font-size: 0.96em;
       line-height: 1.85;
       color: rgba(93, 109, 126, 0.98);
-      position: relative;
-      z-index: 1;
     }
 
     @media (max-width: 980px) {
@@ -512,9 +543,10 @@
       padding: 78px 20px;
       margin-top: 56px;
 
+      /* Updated to new palette (no legacy blues) */
       background:
-        radial-gradient(900px 540px at 20% 30%, rgba(0,160,220,0.22), transparent 55%),
-        radial-gradient(760px 460px at 90% 12%, rgba(0,115,207,0.26), transparent 55%),
+        radial-gradient(900px 540px at 20% 30%, rgba(56,189,248,0.18), transparent 55%),
+        radial-gradient(760px 460px at 90% 12%, rgba(37,99,235,0.22), transparent 55%),
         linear-gradient(135deg, #0F1A24 0%, #1B2D3D 45%, #0F1A24 100%);
     }
 
@@ -526,13 +558,15 @@
       pointer-events: none;
     }
 
+    .cta-section h2,
+    .cta-section p,
+    .cta-button { position: relative; z-index: 1; }
+
     .cta-section h2 {
       font-size: clamp(1.75rem, 2.8vw + 1rem, 2.35rem);
       font-weight: 900;
       letter-spacing: -0.03em;
       margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
     }
 
     .cta-section p {
@@ -540,8 +574,6 @@
       opacity: 0.92;
       max-width: 900px;
       margin: 0 auto 28px;
-      position: relative;
-      z-index: 1;
     }
 
     .cta-button {
@@ -562,8 +594,6 @@
       box-shadow: 0 18px 48px rgba(0,0,0,0.24);
 
       transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), filter var(--dur-2) var(--ease);
-      position: relative;
-      z-index: 1;
     }
 
     .cta-button:hover {
@@ -604,7 +634,7 @@
     }
 
     /* -----------------------------
-       DARK MODE (automatic, no content change)
+       DARK MODE
     --------------------------------*/
     @media (prefers-color-scheme: dark) {
       :root {
@@ -623,12 +653,13 @@
       body {
         color: var(--ink-1);
         background:
-          radial-gradient(1200px 800px at 20% -10%, rgba(0, 115, 207, 0.18), transparent 55%),
-          radial-gradient(900px 600px at 90% 10%, rgba(0, 160, 220, 0.12), transparent 52%),
-          linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+          radial-gradient(1200px 800px at 20% -10%, rgba(37,99,235,0.20), transparent 55%),
+          radial-gradient(900px 600px at 90% 10%, rgba(56,189,248,0.14), transparent 52%),
+          linear-gradient(180deg, var(--bg-0) 0%, var(--bg-0) 30%, var(--bg-1) 100%);
       }
 
       .stats-inner { border-color: rgba(234,241,250,0.10); }
+
       .stat-item, .about-text, .project-card, .skill-card, .highlight-box {
         background: rgba(14, 22, 34, 0.78);
         border-color: rgba(234, 241, 250, 0.10);
@@ -642,7 +673,7 @@
     }
 
     /* -----------------------------
-       PRINT (Recruiter-friendly PDF/printout)
+       PRINT (Recruiter-friendly)
     --------------------------------*/
     @media print {
       * { box-shadow: none !important; text-shadow: none !important; }
@@ -771,3 +802,4 @@
   </footer>
 </body>
 </html>
+```
